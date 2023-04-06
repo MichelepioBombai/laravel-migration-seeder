@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('trains', function (Blueprint $table) {
+        Schema::create('Trains', function (Blueprint $table) {
             $table->id();
             $table->text('azienda');
             $table->enum('stazione_di_partenza', ['Milano', 'Roma', 'Torino']);
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trains');
+        Schema::dropIfExists('Trains');
     }
 };

@@ -5,10 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\Train;
+use App\Models\train;
 use Faker\Generator as Faker;
 
-class TrainSeeder extends Seeder
+class trainSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,16 +18,16 @@ class TrainSeeder extends Seeder
     public function run(Faker $faker)
     {
         for($i = 0; $i < 50; $i++) {
-            $Train = new Train;
-            $Train->azienda = $faker->word();
-            $Train->stazione_di_partenza  = $faker->randomElement(['Milano', 'Roma', 'Torino']);
-            $Train->stazione_di_arrivo =  $faker->randomElement(['Genova', 'Bologna', 'Lamezia']);
-            $Train->orario_di_partenza = $faker->numberBetween(9, 11);
-            $Train->orario_di_arrivo = $faker->numberBetween(15, 18);
-            $Train->codice_treno = $faker->ean13();
-            $Train->numero_carrozze = $faker->numberBetween(1, 10); 
-            $Train->in_orario = $faker->boolean();
-            $Train->cancellato = $faker->boolean();
+            $train = new Train;
+            $train->azienda = $faker->word();
+            $train->stazione_di_partenza  = $faker->randomElement(['Milano', 'Roma', 'Torino']);
+            $train->stazione_di_arrivo =  $faker->randomElement(['Genova', 'Bologna', 'Lamezia']);
+            $train->orario_di_partenza = $faker->numberBetween(9, 11);
+            $train->orario_di_arrivo = $faker->numberBetween(15, 18);
+            $train->codice_treno = $faker->ean13();
+            $train->numero_carrozze = $faker->numberBetween(1, 10); 
+            $train->in_orario = $faker->boolean();
+            $train->cancellato = $faker->boolean();
         }
     }
 }
